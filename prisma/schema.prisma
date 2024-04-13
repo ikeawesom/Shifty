@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Plans {
+  plan_id  String   @id @default(auto()) @map("_id") @db.ObjectId
+  members  String[] // list of user_ids
+  authorId String   @db.ObjectId // id of the user
+  planType String // daily, weekly, monthly
+}
+
+model User {
+  user_id    String   @id @default(auto()) @map("_id") @db.ObjectId
+  auth_id    String   @unique
+  email      String   @unique
+  first_name String
+  last_name  String
+  plans      String[] // list of plan_ids
+}
