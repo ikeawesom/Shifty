@@ -1,5 +1,5 @@
 import PageWrapper from "@/src/components/PageWrapper";
-import Sidebar from "@/src/components/navigation/Sidebar";
+import Sidebar from "@/src/components/navigation/sidebar/Sidebar";
 import { setupNewUser } from "@/src/libs/auth/setupNewUser";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";

@@ -1,10 +1,10 @@
 import React, { Suspense } from "react";
-import Logo from "../Logo";
-import FlexContainer from "../utils/FlexContainer";
+import Logo from "../../Logo";
+import FlexContainer from "../../utils/FlexContainer";
 import { NAVBAR_DASHBOARD_LINKS, NavLinkType } from "@/src/constants";
 import SidebarTab from "./SidebarTab";
-import NavAccountDetails from "./NavAccountDetails";
-import AccountDetailsLoadSkeleton from "./sidebar/AccountDetailsLoadSkeleton";
+import NavAccountDetails from "../NavAccountDetails";
+import AccountDetailsLoadSkeleton from "./AccountDetailsLoadSkeleton";
 
 export default async function Sidebar() {
   return (
