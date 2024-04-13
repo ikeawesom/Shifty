@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Lexend", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* border: 1px dotted red; */
+}
+
+input {
+  @apply px-3 py-2 rounded-lg shadow-sm border-[1px] border-gray-100 w-full;
+}
+
+h1,
+h2,
+h3,
+label {
+  @apply text-gray-800;
+}
+
+p {
+  @apply text-gray-500;
+}
+
+a:not(.custom) {
+  @apply duration-300;
+}
+
+a:not(.custom):hover {
+  @apply -translate-y-1;
+}
