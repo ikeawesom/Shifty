@@ -15,7 +15,7 @@ export default function SidebarTab(config: NavLinkType) {
     <Link
       href={link}
       className={twMerge(
-        "custom text-lg p-2 max-[600px]:py-3 min-[600px]:pr-10 rounded-lg duration-100 w-full",
+        "custom text-lg p-2 rounded-lg duration-100 w-full",
         pathname === link ? "bg-blue-200" : "hover:bg-blue-100 group"
       )}
     >

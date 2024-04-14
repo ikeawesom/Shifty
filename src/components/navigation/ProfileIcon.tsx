@@ -16,9 +16,9 @@ export default function ProfileIcon({
       <Image
         alt={text[0]}
         src={src ?? ""}
-        width={DEFAULT_ICON_SIZE}
-        height={DEFAULT_ICON_SIZE}
-        className="rounded-full h-12 w-12"
+        width={DEFAULT_ICON_SIZE * 1.5}
+        height={DEFAULT_ICON_SIZE * 1.5}
+        className="rounded-full"
       />
     );
   return (
