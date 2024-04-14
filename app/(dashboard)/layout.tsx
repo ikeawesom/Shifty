@@ -26,7 +26,9 @@ export default async function DashboardLayout({
   return (
     <div className="min-h-svh w-full flex items-start justify-start">
       <Sidebar />
-      <PageWrapper className="max-w-[100%] p-4 py-0">{children}</PageWrapper>
+      <PageWrapper parentClassName="w-full" className="max-w-[100%] p-4 py-0">
+        {children}
+      </PageWrapper>
     </div>
   );
 }
