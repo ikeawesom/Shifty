@@ -46,5 +46,10 @@ export const NAVBAR_DASHBOARD_LINKS = [
     link: "/dashboard/permissions",
     icon: "icon_permissions.svg",
   },
+  {
+    title: "Shop",
+    link: "/dashboard/shop",
+    icon: "icon_fire.svg",
+  },
   { title: "Settings", link: "/dashboard/settings", icon: "icon_settings.svg" },
 ] as NavLinkType[];
