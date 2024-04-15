@@ -8,10 +8,10 @@ datasource db {
 }
 
 model Plans {
-  plan_id  String   @id @default(auto()) @map("_id") @db.ObjectId
-  members  String[] // list of user_ids
-  authorId String   @db.ObjectId // id of the user
-  planType String // daily, weekly, monthly
+  plan_id   String   @id @default(auto()) @map("_id") @db.ObjectId
+  members   String[] // list of user_ids
+  createdBy String // auth id of the user
+  planType  String // daily, weekly, monthly
 }
 
 model User {
@@ -21,4 +21,5 @@ model User {
   first_name String
   last_name  String
   plans      String[] // list of plan_ids
+  points     Int?
 }

@@ -18,6 +18,7 @@ export async function setupNewUser(user: KindeUser) {
           email: user.email ?? "",
           first_name: user.given_name ?? "",
           last_name: user.family_name ?? "",
+          points: 100,
         },
       });
     }
