@@ -3,9 +3,9 @@ import { DEFAULT_ICON_SIZE, NavLinkType } from "@/src/constants";
 import Link from "next/link";
 import React from "react";
 import { twMerge } from "tailwind-merge";
-import FlexContainer from "../../utils/FlexContainer";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import FlexContainer from "../../utils/FlexContainer";
 
 export default function SidebarTab(config: NavLinkType) {
   const pathname = usePathname();
@@ -28,7 +28,7 @@ export default function SidebarTab(config: NavLinkType) {
         />
         <h1
           className={twMerge(
-            "max-[600px]:hidden group-hover:text-gray-800 duration-100",
+            "max-[600px]:hidden group-hover:text-gray-700 duration-100",
             pathname !== link && "text-gray-400"
           )}
         >
