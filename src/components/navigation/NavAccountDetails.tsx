@@ -19,7 +19,7 @@ export default async function NavAccountDetails() {
           <h1 className="text-lg font-bold">
             {user?.given_name} {user?.family_name}
           </h1>
-          <p className="text-sm text-gray-400">{user?.email}</p>
+          <p className="text-sm">{user?.email}</p>
         </FlexContainer>
       </FlexContainer>
       <LogoutButton className="w-full custom" />

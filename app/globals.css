@@ -19,7 +19,7 @@ h1,
 h2,
 h3,
 label {
-  @apply text-gray-800;
+  @apply text-gray-700;
 }
 
 p {

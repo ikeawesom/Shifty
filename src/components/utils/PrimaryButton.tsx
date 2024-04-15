@@ -12,7 +12,7 @@ export default function PrimaryButton(config: ButtonType) {
       disabled={disabled || loading}
       type={type ? type : "button"}
       className={twMerge(
-        "rounded-lg shadow-sm duration-150 ease-in-out bg-blue-600 text-slate-50 px-6 py-2",
+        "rounded-lg shadow-sm duration-150 ease-in-out bg-blue-500 text-slate-50 px-6 py-2",
         `${
           disabled || loading
             ? "opacity-70 cursor-not-allowed"
