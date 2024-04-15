@@ -3,7 +3,7 @@ import { DEFAULT_ICON_SIZE, NavLinkType } from "@/src/constants";
 import Link from "next/link";
 import React from "react";
 import { twMerge } from "tailwind-merge";
-import FlexContainer from "../utils/FlexContainer";
+import FlexContainer from "../../utils/FlexContainer";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
