@@ -1,7 +1,7 @@
 import React from "react";
 import LogoutButton from "../auth/LogoutButton";
 import FlexContainer from "../utils/FlexContainer";
-import ProfileIcon from "./ProfileIcon";
+import ProfileIcon from "./sidebar/ProfileIcon";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 export default async function NavAccountDetails() {
