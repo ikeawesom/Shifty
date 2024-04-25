@@ -18,7 +18,7 @@ export default function GraphicsEmpty({
         width={size ?? 150}
         height={size ?? 150}
       />
-      <h1 className="text-center">{children}</h1>
+      <h1 className="text-center max-w-[600px]">{children}</h1>
     </FlexContainer>
   );
 }

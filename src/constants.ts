@@ -8,11 +8,12 @@ export type UtilityType = {
 };
 export interface GraphicsType extends UtilityType {
   size?: number;
-  type: "sleeping";
+  type: "sleeping" | "question";
 }
 
 export const GRAPHICS_TYPE = {
   sleeping: "/images/img_sleeping.svg",
+  question: "/images/img_question.svg",
 };
 
 export type UserType = {
@@ -22,11 +23,10 @@ export type UserType = {
 };
 
 export type MemberType = {
-  member_id: string;
+  member_id?: string;
   first_name: string;
   last_name: string;
   points: number;
-  user_id?: string;
 };
 
 export type FormInputContainerType = {
