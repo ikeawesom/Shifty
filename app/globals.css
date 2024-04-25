@@ -18,8 +18,22 @@ input {
 h1,
 h2,
 h3,
+th,
 label {
   @apply text-gray-700;
+}
+
+table {
+  @apply w-full rounded-md overflow-hidden bg-blue-100 shadow-inner;
+}
+
+th,
+td:not(.custom) {
+  @apply text-start p-3;
+}
+
+tr:not(.header) {
+  @apply bg-white w-full hover:brightness-95 duration-150 font-light text-gray-500;
 }
 
 p,
