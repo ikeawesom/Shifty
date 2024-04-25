@@ -6,7 +6,7 @@ export default function DefaultSkeleton({ className }: UtilityType) {
   return (
     <div
       className={twMerge(
-        "rounded-lg bg-gray-400 animate-pulse w-full h-[50px]",
+        "rounded-lg bg-gray-300 animate-pulse w-full h-[50px]",
         className
       )}
     />
