@@ -1,5 +1,7 @@
 import PageWrapper from "@/src/components/PageWrapper";
+import CoinsSection from "@/src/components/dashboard/CoinsSection";
 import Sidebar from "@/src/components/navigation/sidebar/Sidebar";
+import FlexContainer from "@/src/components/utils/FlexContainer";
 import { setupNewUser } from "@/src/libs/auth/setupNewUser";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
@@ -26,12 +28,15 @@ export default async function DashboardLayout({
   return (
     <div className="min-h-svh w-full flex items-start justify-start">
       <Sidebar />
-      <PageWrapper
-        parentClassName="w-full block p-4"
-        className="max-w-[100%] p-0"
-      >
-        {children}
-      </PageWrapper>
+      <FlexContainer className="flex-col w-full gap-0 items-end">
+        <CoinsSection className="min-[600px]:hidden p-3" />
+        <PageWrapper
+          parentClassName="w-full block p-4"
+          className="max-w-[100%] p-0"
+        >
+          {children}
+        </PageWrapper>
+      </FlexContainer>
     </div>
   );
 }
