@@ -6,14 +6,30 @@ export type UtilityType = {
   parentClassName?: string;
   dark?: boolean;
 };
-export interface GraphicsType extends UtilityType {
+
+export interface IconsType extends UtilityType {
   size?: number;
-  type: "sleeping" | "question";
+}
+
+export interface GraphicsType extends IconsType {
+  type: "sleeping" | "question" | "empty";
 }
 
 export const GRAPHICS_TYPE = {
   sleeping: "/images/img_sleeping.svg",
   question: "/images/img_question.svg",
+  empty: "/images/img_empty.svg",
+};
+
+export type EventType = {
+  event_id?: string;
+  event_name: string;
+  event_desc?: string;
+  members: string[];
+  eventType?: "weekly" | "monthly" | "daily";
+  plan?: string; // JSON string of algorithm-derived plam
+  createdBy: string; // auth id of the user
+  createdOn: Date;
 };
 
 export type UserType = {
