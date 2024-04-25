@@ -47,7 +47,7 @@ export default function CreateMemberForm() {
             placeholder="e.g. Tan"
           />
         </FormInputContainer>
-        <HRow />
+        <HRow className="max-w-[500px]" />
         <SecondaryButton
           className="text-sm"
           onClick={() =>

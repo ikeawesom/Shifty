@@ -21,7 +21,7 @@ export default function AddMembersOptions() {
         Add Member <span className="pb-[2.2px] text-xl">+</span>
       </PrimaryButton>
       {show && (
-        <DefaultCard className="fade-down w-[200px] absolute top-14 min-[689px]:right-0 max-[689px]:left-0 border-slate-100 sm:p-2">
+        <DefaultCard className="fade-down w-[250px] absolute top-14 min-[689px]:right-0 max-[689px]:left-0 border-slate-100 sm:p-2">
           <FlexContainer className="flex-col gap-2 w-full">
             <Link
               className="w-full custom"
@@ -29,7 +29,9 @@ export default function AddMembersOptions() {
                 new: "create",
               })}`}
             >
-              <PrimaryButton className="w-full">Create members</PrimaryButton>
+              <PrimaryButton className="w-full">
+                Create new member
+              </PrimaryButton>
             </Link>
             <Link
               className="w-full custom"
