@@ -18,39 +18,17 @@ export function useMembers() {
   const fetchMembers = async (auth_id: string) => {
     try {
       setLoading(true);
-      const {
-        data: { members },
-        error,
-      } = await fetchUserMembers(auth_id);
+      let { data, error } = await fetchUserMembers(auth_id);
       if (error) throw new Error(error);
-
-      let membersArr = [] as MemberType[];
-      const membersIdsArr = members as string[];
-
-      const arrPromise = membersIdsArr.map(async (id: string) => {
-        const { data, error } = await getMemberData(id);
-        if (error) return handleResponses({ status: false, error });
-        return handleResponses({ data });
-      });
-
-      const resolvedArr = await Promise.all(arrPromise);
-
-      resolvedArr.forEach((item: resType) => {
-        if (!item.status) throw new Error(error);
-        membersArr.push(item.data);
-      });
-
-      console.log(membersArr);
 
       if (query !== "") {
         // handle query
-        membersArr = membersArr.filter((member: MemberType) => {
+        data = data.filter((member: MemberType) => {
           const full_name = `${member.first_name} ${member.last_name}`;
-          return full_name.includes(query);
+          return full_name.toLowerCase().includes(query.toLowerCase());
         });
       }
-
-      setMembers(membersArr);
+      setMembers(data);
     } catch (err: any) {
       toast.error(err.message);
     } finally {
@@ -64,7 +42,7 @@ export function useMembers() {
     setTimeout(() => {
       const { id: auth_id } = user;
       fetchMembers(auth_id);
-    }, 200);
+    }, 400);
   }, [query, user]);
 
   return { loading, members, query, onQueryChange };

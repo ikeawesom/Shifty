@@ -68,9 +68,9 @@ export async function fetchUserPoints(auth_id: string) {
 export async function fetchUserMembers(auth_id: string) {
   try {
     await prismaConnect();
-    const membersData = await client.user.findUnique({
-      where: { auth_id },
-      select: { members: true },
+    const membersData = await client.member.findMany({
+      where: { createdBy: auth_id },
+      orderBy: { points: "desc" },
     });
     return handleResponses({ data: membersData });
   } catch (error: any) {
