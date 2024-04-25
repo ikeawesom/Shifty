@@ -27,6 +27,8 @@ export type MemberType = {
   first_name: string;
   last_name: string;
   points: number;
+  createdOn?: Date;
+  createdBy?: string;
 };
 
 export type FormInputContainerType = {
