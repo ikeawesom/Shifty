@@ -5,9 +5,8 @@ import {
   RegisterLink,
   useKindeBrowserClient,
 } from "@kinde-oss/kinde-auth-nextjs";
-import Image from "next/image";
-import { DEFAULT_ICON_SIZE } from "../constants";
 import Link from "next/link";
+import RightArrow from "./utils/graphics/RightArrow";
 
 export default function Hero() {
   const { isAuthenticated } = useKindeBrowserClient();
@@ -29,14 +28,7 @@ export default function Hero() {
       {isAuthenticated ? (
         <Link href="/dashboard">
           <PrimaryButton className="text-xl px-8 pr-4 py-3 flex items-center justify-center">
-            Go to Dashboard{" "}
-            <Image
-              src="/icons/icon_right_bright.svg"
-              alt=""
-              width={DEFAULT_ICON_SIZE}
-              height={DEFAULT_ICON_SIZE}
-              className="translate-y-[1.3px]"
-            />
+            Go to Dashboard <RightArrow />
           </PrimaryButton>
         </Link>
       ) : (
