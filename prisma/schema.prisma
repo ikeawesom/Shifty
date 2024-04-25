@@ -18,12 +18,14 @@ model Member {
 }
 
 model Event {
-  event_id  String   @id @default(auto()) @map("_id") @db.ObjectId
-  members   String[] // list of member_ids
-  eventType String // daily, weekly, monthly
-  plan      String // JSON string of algorithm-derived plam
-  createdBy String // auth id of the user
-  createdOn DateTime
+  event_id   String   @id @default(auto()) @map("_id") @db.ObjectId
+  event_name String
+  event_desc String?
+  members    String[] // list of member_ids
+  eventType  String // daily, weekly, monthly
+  plan       String // JSON string of algorithm-derived plam
+  createdBy  String // auth id of the user
+  createdOn  DateTime
 }
 
 model User {
