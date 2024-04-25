@@ -19,6 +19,8 @@ export async function setupNewUser(user: KindeUser) {
           first_name: user.given_name ?? "",
           last_name: user.family_name ?? "",
           points: 100,
+          members: [],
+          events: [],
         },
       });
     }

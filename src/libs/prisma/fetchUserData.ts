@@ -1,3 +1,4 @@
+"use server";
 import { redirect } from "next/navigation";
 import { prismaConnect, prismaDisconnect } from ".";
 import { getServerSession } from "../auth/getServerSession";
@@ -38,7 +39,7 @@ export async function getAuthID() {
 export async function fetchCurrentEvents(auth_id: string) {
   try {
     await prismaConnect();
-    const userPlansData = await client.plans.findMany({
+    const userPlansData = await client.event.findMany({
       where: { createdBy: auth_id },
     });
     return handleResponses({ data: userPlansData });
@@ -57,6 +58,21 @@ export async function fetchUserPoints(auth_id: string) {
       select: { points: true },
     });
     return handleResponses({ data: pointsData?.points });
+  } catch (error: any) {
+    return handleResponses({ status: false, error });
+  } finally {
+    await prismaDisconnect();
+  }
+}
+
+export async function fetchUserMembers(auth_id: string) {
+  try {
+    await prismaConnect();
+    const membersData = await client.user.findUnique({
+      where: { auth_id },
+      select: { members: true },
+    });
+    return handleResponses({ data: membersData });
   } catch (error: any) {
     return handleResponses({ status: false, error });
   } finally {
