@@ -32,7 +32,7 @@ export async function getAuthID() {
 
     return handleResponses({ data: auth_id.auth_id });
   } catch (error: any) {
-    return handleResponses({ status: false, error });
+    return handleResponses({ status: false, error: error.message });
   }
 }
 
@@ -44,7 +44,7 @@ export async function fetchCurrentEvents(auth_id: string) {
     });
     return handleResponses({ data: userPlansData });
   } catch (error: any) {
-    return handleResponses({ status: false, error });
+    return handleResponses({ status: false, error: error.message });
   } finally {
     await prismaDisconnect();
   }
@@ -59,7 +59,7 @@ export async function fetchUserPoints(auth_id: string) {
     });
     return handleResponses({ data: pointsData?.points });
   } catch (error: any) {
-    return handleResponses({ status: false, error });
+    return handleResponses({ status: false, error: error.message });
   } finally {
     await prismaDisconnect();
   }
@@ -74,7 +74,7 @@ export async function fetchUserMembers(auth_id: string) {
     });
     return handleResponses({ data: membersData });
   } catch (error: any) {
-    return handleResponses({ status: false, error });
+    return handleResponses({ status: false, error: error.message });
   } finally {
     await prismaDisconnect();
   }
