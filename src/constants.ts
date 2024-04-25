@@ -6,11 +6,27 @@ export type UtilityType = {
   parentClassName?: string;
   dark?: boolean;
 };
+export interface GraphicsType extends UtilityType {
+  size?: number;
+  type: "sleeping";
+}
+
+export const GRAPHICS_TYPE = {
+  sleeping: "/images/img_sleeping.svg",
+};
 
 export type UserType = {
   email: string;
   first_name: string;
   last_name: string;
+};
+
+export type MemberType = {
+  member_id: string;
+  first_name: string;
+  last_name: string;
+  points: number;
+  user_id?: string;
 };
 
 export type FormInputContainerType = {
