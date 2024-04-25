@@ -10,3 +10,9 @@ export default function handleResponses(args?: any) {
     status: status === false ? false : true,
   };
 }
+
+export type resType = {
+  status: boolean;
+  error: any;
+  data: any;
+};
