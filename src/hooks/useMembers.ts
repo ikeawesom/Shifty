@@ -2,8 +2,6 @@ import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import { MemberType } from "../constants";
-import handleResponses, { resType } from "../libs/handleResponses";
-import { getMemberData } from "../libs/prisma/fetchMemberData";
 import { fetchUserMembers } from "../libs/prisma/fetchUserData";
 
 export function useMembers() {
