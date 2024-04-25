@@ -16,7 +16,7 @@ export default function SidebarTab(config: NavLinkType) {
       href={link}
       className={twMerge(
         "custom text-lg p-2 rounded-lg duration-100 w-full",
-        pathname === link ? "bg-blue-200" : "hover:bg-blue-100 group"
+        pathname.includes(link) ? "bg-blue-200" : "hover:bg-blue-100 group"
       )}
     >
       <FlexContainer className="justify-start max-[600px]:justify-center">
@@ -29,7 +29,7 @@ export default function SidebarTab(config: NavLinkType) {
         <h1
           className={twMerge(
             "max-[600px]:hidden group-hover:text-gray-700 duration-100",
-            pathname !== link && "text-gray-400"
+            !pathname.includes(link) && "text-gray-400"
           )}
         >
           {title}
