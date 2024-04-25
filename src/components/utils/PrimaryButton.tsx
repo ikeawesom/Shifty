@@ -1,7 +1,7 @@
 "use client";
 import { ButtonType } from "@/src/constants";
 import { twMerge } from "tailwind-merge";
-import SpinnerBright from "./SpinnerBright";
+import SpinnerBright from "./graphics/SpinnerBright";
 
 export default function PrimaryButton(config: ButtonType) {
   const { children, className, disabled, loading, onClick, type } = config;
