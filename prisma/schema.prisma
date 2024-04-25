@@ -8,19 +8,22 @@ datasource db {
 }
 
 model Member {
-  member_id  String  @id @default(auto()) @map("_id") @db.ObjectId
+  member_id  String   @id @default(auto()) @map("_id") @db.ObjectId
   first_name String
   last_name  String
   points     Int
-  user_id    String? @unique @db.ObjectId // can be dummy member
+  createdBy  String // auth_id of user
+  createdOn  DateTime
+  // user_id    String? @unique @db.ObjectId // can be dummy member
 }
 
 model Event {
   event_id  String   @id @default(auto()) @map("_id") @db.ObjectId
   members   String[] // list of member_ids
-  createdBy String // auth id of the user
   eventType String // daily, weekly, monthly
   plan      String // JSON string of algorithm-derived plam
+  createdBy String // auth id of the user
+  createdOn DateTime
 }
 
 model User {
