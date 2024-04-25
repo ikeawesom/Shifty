@@ -23,7 +23,7 @@ export default async function TopPerformingMembers({ className }: UtilityType) {
       })}`
     );
   else {
-    console.log("data:", userCurrentEvents);
+    console.log("performers:", userCurrentEvents);
     data = [];
   }
 
@@ -37,7 +37,7 @@ export default async function TopPerformingMembers({ className }: UtilityType) {
       <DefaultCard className="flex flex-col items-start justify-start gap-3 p-2 h-full">
         {empty ? (
           <CenterContainer className="w-full h-full">
-            <FlexContainer className="flex-col gap-4">
+            <FlexContainer className="flex-col gap-4 text-center">
               <p className="text-sm">Nobody here yet. Let's invite some!</p>
               <Link
                 className="custom"

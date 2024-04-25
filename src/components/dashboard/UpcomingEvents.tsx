@@ -24,7 +24,7 @@ export default async function UpcomingEvents({ className }: UtilityType) {
       })}`
     );
 
-  console.log("data:", userCurrentEvents);
+  console.log("events:", userCurrentEvents);
   data = [];
 
   const empty = data.length === 0;
@@ -37,7 +37,7 @@ export default async function UpcomingEvents({ className }: UtilityType) {
       <DefaultCard className="flex flex-col items-start justify-start gap-3 p-2 h-full">
         {empty ? (
           <CenterContainer className="w-full h-full">
-            <FlexContainer className="flex-col gap-4">
+            <FlexContainer className="flex-col gap-4 text-center">
               <p className="text-sm">
                 Hmm, looks like you have not created any events.
               </p>
