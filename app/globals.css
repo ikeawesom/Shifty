@@ -12,7 +12,7 @@
 }
 
 input {
-  @apply px-3 py-2 rounded-lg shadow-sm border-[1px] border-gray-100 w-full;
+  @apply px-3 py-2 rounded-lg shadow-sm border-[1px] border-gray-100;
 }
 
 h1,
@@ -22,7 +22,8 @@ label {
   @apply text-gray-700;
 }
 
-p {
+p,
+label {
   @apply text-gray-500;
 }
 
@@ -32,4 +33,19 @@ a:not(.custom) {
 
 a:not(.custom):hover {
   @apply -translate-y-1;
+}
+
+.fade-down {
+  animation: fade-down 200ms forwards ease-in;
+}
+
+@keyframes fade-down {
+  from {
+    transform: translateY(-5%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }
