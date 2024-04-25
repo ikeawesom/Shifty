@@ -7,11 +7,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Plans {
-  plan_id   String   @id @default(auto()) @map("_id") @db.ObjectId
-  members   String[] // list of user_ids
+model Member {
+  member_id  String  @id @default(auto()) @map("_id") @db.ObjectId
+  first_name String
+  last_name  String
+  points     Int
+  user_id    String? @unique @db.ObjectId // can be dummy member
+}
+
+model Event {
+  event_id  String   @id @default(auto()) @map("_id") @db.ObjectId
+  members   String[] // list of member_ids
   createdBy String // auth id of the user
-  planType  String // daily, weekly, monthly
+  eventType String // daily, weekly, monthly
+  plan      String // JSON string of algorithm-derived plam
 }
 
 model User {
@@ -20,6 +29,7 @@ model User {
   email      String   @unique
   first_name String
   last_name  String
-  plans      String[] // list of plan_ids
+  events     String[] // list of event_ids
   points     Int?
+  members    String[] // list of member_ids
 }
